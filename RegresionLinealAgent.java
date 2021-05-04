@@ -35,6 +35,8 @@ public class RegresionLinealAgent extends Agent {
 	public void obtenerEcuacion(final double x) {
 		addBehaviour(new OneShotBehaviour() {
 			public void action() {
+				regresion.setX(x);
+				regresion.calcularY();
 				y = regresion.getY();
 				String r = regresion.toString()+"\n";
 				r += ""+y;
